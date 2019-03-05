@@ -1,0 +1,69 @@
+<ngx-spinner></ngx-spinner>
+<div class="background">
+  <div class="goBack" (click)=searchCity()>
+    <i class="ion-android-arrow-back"></i>
+  </div>
+  <div class="inputDiv">
+    <div style="display: inline-block; width: 90%;">
+      <input class="inputSearch" type="text" (keyup.enter)="searchCity()" [(ngModel)]="searchText" name="search"
+        #search="ngModel">
+    </div>
+    <div class="iconInput" (click)="searchCity()"><i class="ion-search"></i></div>
+  </div>
+  <ng-container *ngIf="cityCurrent">
+    <div class="title">
+      Weather in {{cityCurrent.name}}, {{cityCurrent.sys.country}}
+    </div>
+    <div class="date">
+      {{dateString}}
+    </div>
+    <div class="bigCard">
+      <div class="currentWeather">
+        <div class="cardLeft">
+          <div class="temp">
+            {{cityCurrent.main.temp}}ºC
+          </div>
+          <div class="cardIcon">
+            <img src="https://openweathermap.org/img/w/{{cityCurrent.weather[0].icon}}.png" />
+            <span>{{cityCurrent.weather[0].description}}</span>
+
+          </div>
+        </div>
+        <div class="cardRight">
+          <div><span class="description">Máx</span><span class="value redValue">{{cityCurrent.main.temp_max}} ºC</span>
+          </div>
+          <div><span class="description">Min</span><span class="value blueValue">{{cityCurrent.main.temp_min}} ºC</span>
+          </div>
+          <div><span class="description">Sunrise</span><span
+              class="value">{{returnTimestampHours(cityCurrent.sys.sunrise)}}</span></div>
+          <div><span class="description">Sunset</span><span
+              class="value">{{returnTimestampHours(cityCurrent.sys.sunset)}}</span></div>
+        </div>
+      </div>
+      <div class="forecastTitle">5 day weather forecast <span>every 3 hours</span></div>
+      <div class="forecastList" [ngClass]="{'today': isToday(forecast.dt)}" *ngFor="let forecast of cityForecast">
+        <div class="dateForecast">
+          <div class="dateLabel">{{returnDateString(forecast.dt)}}</div>
+          <div class="hourLabel">{{returnTimestampHours(forecast.dt)}}</div>
+        </div>
+        <div class="iconForecast">
+          <img src="https://openweathermap.org/img/w/{{forecast.weather[0].icon}}.png" />
+          <span>{{forecast.weather[0].description}}</span>
+        </div>
+        <div class="tempForecast">
+          <span class="maxTemp">
+            {{forecast.main.temp_max}} ºC
+          </span>
+          <span class="minTemp">
+            {{forecast.main.temp_min}} ºC
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </ng-container>
+
+
+
+
+</div>

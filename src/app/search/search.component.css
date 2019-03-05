@@ -1,0 +1,181 @@
+.background {
+    background: -webkit-linear-gradient(top, #39a3db, #39a3db 150px, #f6f6f6 150px, #f6f6f6);
+    min-height: 100vh;
+    padding-bottom: 10px;
+}
+
+.title {
+    margin: auto;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    margin-bottom: 10px;
+}
+
+.inputDiv {
+    width: 210px;
+    text-align: left;
+    margin: auto;
+    background-color: white;
+    border-radius: 3px;
+    padding-left: 3px;
+    height: 30px;
+    box-shadow: #3b3b3b73 1px 1px 5px;
+    margin-bottom: 45px;
+}
+
+.inputSearch {
+    width: 100%;
+    outline: none;
+    border: none;
+    height: 27px;
+}
+
+.iconInput {
+    display: inline-block;
+    width: 10%;
+    text-align: center;
+    color: #39a3db;
+    font-size: 15pt;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.cardDiv {
+    width: 270px;
+    height: 85px;
+    background-color: #fff;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 3px;
+    box-shadow: #3b3b3b73 1px 1px 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.cardDegree {
+    display: inline-block;
+    width: 70px;
+    background-color: #f0f0f0;
+    margin: 10px;
+    height: calc(100% - 20px);
+    font-size: 10pt;
+    text-align: center;
+    color: #3c3c3c;
+    font-weight: bold;
+    vertical-align: top;
+    border-radius: 4px;
+}
+
+.cardDegree>div {
+    margin-top: 30%;
+}
+
+.cardInfo {
+    display: inline-block;
+    width: 90px;
+    margin: 10px;
+    height: calc(100% - 20px);
+    font-size: 8pt;
+    text-align: center;
+    color: #3c3c3c;
+    font-weight: bold;
+}
+
+.cityDiv {
+    color: #39a3db;
+    font-weight: bold;
+    margin: auto;
+    padding-bottom: 4px;
+    padding-top: 10px;
+}
+
+.cityDiv img {
+    width: 15px;
+}
+
+.cardIcon {
+    display: inline-block;
+    width: 50px;
+    margin: 10px;
+    /* height: calc(100% - 20px); */
+    font-size: 8px;
+    text-align: center;
+    color: #3c3c3c;
+    font-style: italic;
+    vertical-align: top;
+}
+
+.cardIcon span {
+    opacity: 0.75;
+}
+
+.tempMax {
+    float: right;
+    font-weight: bold;
+    color: #b30000;
+}
+
+.tempMin {
+    float: right;
+    font-weight: bold;
+    color: #4a90e2;
+}
+
+.labelTemp {
+    color: #3c3c3c;
+    opacity: 0.5;
+}
+
+.cardInfoTemp {
+    text-align: left;
+    padding-left: 1px;
+    padding-right: 15px;
+    font-size: 8px;
+}
+/* modify css for screens bigger than 650px */
+@media(min-width: 650px) {
+    .background {
+        background: -webkit-linear-gradient(top, #39a3db, #39a3db 200px, #f6f6f6 200px, #f6f6f6);
+    }
+    .title {
+        padding-top: 40px;
+    }
+    .inputDiv {
+        width: 460px;
+    }
+    .cardDiv {
+        width: 600px;
+        height: 150px;
+    }
+    .cardDegree {
+        width: 170px;
+        font-size: 30pt;
+    }
+    .cardInfo {
+        width: 240px;
+        font-size: 15pt;
+        text-align: left;
+    }
+    .cardInfoTemp {
+        text-align: left;
+        padding-right: 110px;
+        font-size: 16px;
+        padding-bottom: 5px;
+    }
+    .cardDegree>div {
+        margin-top: 25%;
+    }
+    .cityDiv {
+        padding-bottom: 21px;
+    }
+    .cardIcon {
+        width: 130px;
+        font-size: 12px;
+        padding-top: 30px;
+    }
+    .cardIcon img {
+        margin: auto;
+        display: block;
+    }
+}

@@ -1,0 +1,36 @@
+<ngx-spinner></ngx-spinner>
+<div class="background">
+  <div class="title">WEATHER IN YOUR CITY </div>
+  <div class="inputDiv">
+    <div style="display: inline-block; width: 90%;">
+      <input class="inputSearch" type="text" (keyup.enter)="searchCity()" [(ngModel)]="searchText" name="search"
+        #search="ngModel">
+    </div>
+    <div class="iconInput" (click)="searchCity()"><i class="ion-search"></i></div>
+  </div>
+
+  <div class="cardDiv" *ngFor="let city of cities;" (click)="openDetails(city.id)">
+    <div class="cardDegree">
+      <div>{{city.main.temp}}ºC</div>
+    </div>
+    <div class="cardInfo">
+      <div class="cityDiv">{{city.name}}, {{city.sys.country}} <img
+          src="http://openweathermap.org/images/flags/{{city.sys.country.toLowerCase()}}.png" /></div>
+      <div class="cardInfoTemp">
+        <span class="labelTemp">Máx</span>
+        <span class="tempMax">{{city.main.temp_max}} ºC</span>
+      </div>
+      <div class="cardInfoTemp">
+        <span class="labelTemp">Min</span>
+        <span class="tempMin">{{city.main.temp_min}} ºC</span>
+      </div>
+    </div>
+    <div class="cardIcon">
+      <img src="https://openweathermap.org/img/w/{{city.weather[0].icon}}.png" />
+      <span>{{city.weather[0].description}}</span>
+
+    </div>
+  </div>
+
+
+</div>
